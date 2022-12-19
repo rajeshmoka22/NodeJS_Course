@@ -1,0 +1,1 @@
+console.log('*************Please refer package json scripts for each task*************');

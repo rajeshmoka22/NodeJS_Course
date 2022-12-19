@@ -1,0 +1,25 @@
+{
+  "name": "node_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task1": "node ./task1/task1_1.js",
+    "task2": "node ./task1/task1_2.js",
+    "task3-1": "npx babel-node ./task1/task1_3/task1_1.babel.js",
+    "task3-2": "npx babel-node ./task1/task1_3/task1_2.babel.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
