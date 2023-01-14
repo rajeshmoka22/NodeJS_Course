@@ -8,18 +8,31 @@
     "task1": "node ./task1/task1_1.js",
     "task2": "node ./task1/task1_2.js",
     "task3-1": "npx babel-node ./task1/task1_3/task1_1.babel.js",
-    "task3-2": "npx babel-node ./task1/task1_3/task1_2.babel.js"
+    "task3-2": "npx babel-node ./task1/task1_3/task1_2.babel.js",
+    "hometask2": "nodemon --exec npx babel-node ./task2/index.ts --extensions \".ts\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "csvtojson": "^2.0.10",
-    "nodemon": "^2.0.20"
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/node": "^7.20.5",
-    "@babel/preset-env": "^7.20.2"
+    "@babel/preset-env": "^7.20.2",
+    "@babel/cli": "^7.7.5",
+    "@babel/preset-typescript": "^7.7.7",
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.18",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.30.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4"
   }
 }
