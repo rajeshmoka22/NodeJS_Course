@@ -1,10 +1,12 @@
 import { Request, Response, NextFunction } from "express";
+import { ControllerLogger } from "../api/middleware/controllerLogger";
 import { GroupService } from "../services/groupService";
 import { UserGroupService } from "../services/userGroupService";
 import { GroupRequest } from "../types/groupInterface";
 
 export class GroupController {
 
+  @ControllerLogger()
   public static async getGroup(req: Request, res: Response, next: NextFunction) {
     try {
       const {id} = req.params;
@@ -16,6 +18,7 @@ export class GroupController {
     }
   }
 
+  @ControllerLogger()
   public static async getAllGroups(req: Request, res: Response, next: NextFunction) {
     try {
       const groups = await GroupService.getAllGroups();
@@ -25,6 +28,7 @@ export class GroupController {
     }
   }
 
+  @ControllerLogger()
   public static async createGroup(req: Request, res: Response, next: NextFunction) {
     try {
       const {name, permissions} = req.body as GroupRequest;
@@ -35,6 +39,7 @@ export class GroupController {
     }
   }
 
+  @ControllerLogger()
   public static async updateGroup(req: Request, res: Response, next: NextFunction) {
     try {
       const {name, permissions} = req.body as GroupRequest;
@@ -47,6 +52,7 @@ export class GroupController {
     }
   }
 
+  @ControllerLogger()
   public static async deleteGroup(req: Request, res: Response, next: NextFunction) {
     try {
       const {id} = req.params;
@@ -58,6 +64,7 @@ export class GroupController {
     }
   }
 
+  @ControllerLogger()
   public static async addUsersToGroup(req: Request, res: Response, next: NextFunction) {
     try {
       const {userId} = req.body;
