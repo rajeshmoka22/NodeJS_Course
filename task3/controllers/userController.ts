@@ -2,10 +2,11 @@ import { Request, Response, NextFunction } from "express";
 import { AutoSuggest, UserInput } from "../types/userInterface";
 
 import { UserService } from "../services/userService";
+import { ControllerLogger } from "../api/middleware/controllerLogger";
 
 
 export class UserController {
-
+  @ControllerLogger()
   public static async getUsers(req: Request, res: Response, next: NextFunction) {
     try {
       const {loginSubstring, limit=10} = req.query as AutoSuggest;
@@ -16,6 +17,7 @@ export class UserController {
     }
   }
 
+  @ControllerLogger()
   public static async getUser(req: Request, res: Response, next: NextFunction) {
     try {
       const {id} = req.params;
@@ -27,9 +29,9 @@ export class UserController {
     }
   }
 
+  @ControllerLogger()
   public static async createUser(req: Request, res: Response, next: NextFunction) {
     try {
-      console.log('inside create user controller', req.body);
       const {login, password, age} = req.body as UserInput;
       await UserService.createUser({login, password, age});
       res.status(200).send({message: 'user created successfully'});
@@ -38,6 +40,7 @@ export class UserController {
     }
   }
 
+  @ControllerLogger()
   public static async updateUser(req: Request, res: Response, next: NextFunction) {
     try {
       const {login, password, age} = req.body as UserInput;
@@ -50,6 +53,7 @@ export class UserController {
     }
   }
 
+  @ControllerLogger()
   public static async deleteUser(req: Request, res: Response, next: NextFunction) {
     try {
       const {id} = req.params;

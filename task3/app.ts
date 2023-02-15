@@ -1,9 +1,9 @@
 import app from './loaders/express';
 import { env } from './config/env';
-import initDb from './loaders/db';
+import initAll from './loaders/init';
 
 async function start() {
-  await initDb();
+  await initAll();
   app.listen(env.app.port);
 }
 
