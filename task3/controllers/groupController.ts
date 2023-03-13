@@ -70,7 +70,7 @@ export class GroupController {
       const {userId} = req.body;
       const {id} = req.params;
       const added = await UserGroupService.addUsersToGroup(id, userId);
-      if(!added) res.send({message:`group not found for id ${id}`});
+      if(!added) res.status(404).send({message:`group not found for id ${id}`});
       else res.send({message: 'user got added'});
     } catch(error) {
       return next(error);

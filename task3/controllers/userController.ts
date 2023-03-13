@@ -22,7 +22,7 @@ export class UserController {
     try {
       const {id} = req.params;
       const user = await UserService.getUser(id);
-      if(!user) res.send({message: `user not found for id: ${id}`});
+      if(!user) res.status(404).send({message: `user not found for id: ${id}`});
       else res.send(user);
     } catch(error) {
       return next(error);
